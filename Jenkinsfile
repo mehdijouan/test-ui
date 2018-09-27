@@ -5,7 +5,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'cd backend'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
     }
