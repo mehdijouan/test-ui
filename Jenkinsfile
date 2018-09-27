@@ -4,8 +4,8 @@ pipeline {
     }
     stages {
         stage('build') {
-            dir 'backend'
                 steps {
+                    dir 'backend'
                     sh 'npm install'
                     sh 'npm run build'
             }
