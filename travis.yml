@@ -1,0 +1,12 @@
+sudo: required
+
+language: javascript
+
+services:
+- docker
+
+before_install:
+- docker build -t testbackend -f backend/Dockerfile.production backend/.
+
+script:
+- docker ps -a
