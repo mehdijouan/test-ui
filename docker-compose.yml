@@ -1,0 +1,20 @@
+version: "2"
+services:
+   testfrontend:
+      build: frontend
+      ports:
+      - "4200:80"
+   testbackend:
+      build: backend
+      ports:
+      - "4000:4000"
+      depends_on:
+      - mongo
+   mongo:
+      image: mongo
+      ports:
+      - "27017:27017"
+      volumes:
+      - data-volume:/data/db
+volumes:
+   data-volume:
