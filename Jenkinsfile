@@ -3,13 +3,11 @@ pipeline {
         docker { image 'node:alpine' }
     }
     stages {
-        stage('Test') {
-            dir('backend') {
+        stage('build') {
+            dir 'backend'
                 steps {
-                    sh 'cd backend'
                     sh 'npm install'
                     sh 'npm run build'
-                }
             }
         }
     }
